@@ -66,6 +66,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             node.scale = SCNVector3(0.01, 0.01, 0.01)
             node.geometry = text
             
+            // setting the position //
             node.simdPosition = SIMD3(pointTranslation.x, pointTranslation.y, pointTranslation.z)
             
             sceneView.scene.rootNode.addChildNode(node)
@@ -78,6 +79,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 extension float4x4 {
   var translation: float3 {
   let translation = self.columns.3
-  return float3(translation.x, translation.y, translation.z)
+    return float3(translation.x, translation.y, 0.0)
   }
 }
